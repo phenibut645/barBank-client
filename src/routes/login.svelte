@@ -1,9 +1,10 @@
 <script context="module">
-    export async function preload({ params }, { query }) {
-        if (token) {
-            this.required(302, '/');
+    export async function preload({ session }) {
+        if (session && session.token) {
+            this.redirect(302, '/');
         }
     }
+
 
 </script>
 
